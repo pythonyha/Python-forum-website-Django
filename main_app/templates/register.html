@@ -50,7 +50,7 @@ righttext{
 
 <div class="container">
   <form>
-    <div class="row"><img src="https://www.python.org/static/img/python-logo.png">
+    <div class="row"><img src="{% static 'images/python-logo.png' %}">
       <h4 style="font-size: 20px;">ایجاد حساب کاربری</h4>
       <div class="input-group input-group-icon">
         <input class="mainLoginInput" style="text-align:right;" type="text" name="username" placeholder="نام کاربری را وارد کنید"/>
@@ -75,9 +75,11 @@ righttext{
       </div>
   <Br>
         <input  type="submit" name="submit" value="ثبت نام"/>
+        <br><br> <center><a style="float: center;color:white;" href="/login">قبلا ثبت نام کرده اید؟ وارد شوید.</a>
+
+    </center></div>
     </div>
-    </div>
-  </form>
+  </form><center> <br><br>{{copyright}}</center>
           <script  src="{% static 'register/js/index.js' %}"></script>
 
 

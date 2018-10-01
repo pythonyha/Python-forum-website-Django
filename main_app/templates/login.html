@@ -50,7 +50,7 @@ righttext{
 
 <div class="container">
   <form>
-    <div class="row"><img src="https://www.python.org/static/img/python-logo.png">
+    <div class="row"><img src="{% static 'images/python-logo.png' %}">
       <h4 style="font-size: 20px;">ورود به حساب کاربری</h4>
       <div class="input-group input-group-icon">
         <input class="mainLoginInput" style="text-align:right;" type="text" name="username" placeholder="نام کاربری"/>
@@ -68,9 +68,13 @@ righttext{
       </div>
   <Br>
         <input  type="submit" name="submit" value="ورود به حساب"/>
+        <br><br> <center><a style="float: center;color:white;" href="/forget">رمز عبور خود را فراموش کرده اید؟</a>
+      <br><br><a style="float: center;color:white;" href="/register">ثبت نام</a>
+    </center>
+
     </div>
     </div>
-  </form>
+  </form><center> <br><br>{{copyright}}</center>
           <script  src="{% static 'register/js/index.js' %}"></script>
 
 

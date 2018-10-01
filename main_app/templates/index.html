@@ -1,3 +1,83 @@
-<center><h1>Welcome to python froum</h1>
-<a href="/login"><h2>Login</h2></a><p></p>
-<a href="/register"><h2>register Page</h2></a><p></p>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>انجمن پایتون</title>
+
+
+
+  <link rel='stylesheet' href='{% static 'register/css/normalize.min.css' %}'>
+
+      <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
+
+        <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v2.0.1/dist/font-face.css">
+
+         <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v18.0.0/dist/font-face.css">
+
+           <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+           <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+<style>
+*{
+font-family: Vazir;
+font-size: 16px;
+}
+.mainLoginInput::-moz-placeholder {
+   font-family: 'myFont', Vazir;
+}
+
+righttext{
+  text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+  <form>
+    <div class="row"><img src="https://www.python.org/static/img/python-logo.png">
+      <h4 style="font-size: 20px;">{{titlepre}}</h4>
+
+    </div>
+    <div class="row">
+      <div class="col-half">
+
+      </div><style>  .button-cc{
+            font-size: 13px;
+            color: #fff;
+            padding: 6px 14px;
+           cursor: pointer;
+            transition: background-color 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            outline: 0;
+            border: 0;
+
+            background: none;
+            float: right;
+                left: 50%;
+            background-color: #e4bd1d;
+            border-color: #e4bd1d;
+        }
+        .button-cc:hover{
+            background-color: #2f2f2f;
+        }</style>
+        <a class="button-cc saa" style="font-size:20px;color:#1f4462; " href="/login">صفحه ورود به حساب</a>
+
+  <Br><Br><Br>  <a class="button-cc saa" style="font-size:20px;color:#1f4462;" href="/register">صفحه ثبت نام</a>
+
+  </form></div>
+    </div>
+  </form>
+          <script  src="{% static 'register/js/index.js' %}"></script>
+
+
+
+
+
+</body>
+
+</html>

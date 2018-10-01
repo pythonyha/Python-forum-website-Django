@@ -1,6 +1,89 @@
-<h1>Register Page</h1>
-<p><input type="text" value="text" name="ad"></input></p>
-<p><input type="text" value="text" name="ad"></input></p>
-<p><input type="text" value="text" name="ad"></input></p>
-<p><input type="text" value="text" name="ad"></input></p>
-<p><input type="text" value="text" name="ad"></input></p>
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>انجمن پایتون</title>
+
+
+
+  <link rel='stylesheet' href='{% static 'register/css/normalize.min.css' %}'>
+
+      <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
+
+        <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/samim-font/v2.0.1/dist/font-face.css">
+
+         <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v18.0.0/dist/font-face.css">
+
+           <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+
+           <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+<style>
+*{
+font-family: Vazir;
+font-size: 16px;
+}
+.mainLoginInput::-moz-placeholder {
+   font-family: 'myFont', Vazir;
+}
+input[type="submit"]
+{
+  font-family: Vazir;
+    font-size:18px;
+    color:#1f4462;
+    background-color: #e4bd1d;
+    border: 0;
+text-align: center;
+float: center;
+
+}
+righttext{
+  text-align: right;
+}
+</style>
+
+</head>
+
+<body>
+
+
+<div class="container">
+  <form>
+    <div class="row"><img src="https://www.python.org/static/img/python-logo.png">
+      <h4 style="font-size: 20px;">ایجاد حساب کاربری</h4>
+      <div class="input-group input-group-icon">
+        <input class="mainLoginInput" style="text-align:right;" type="text" name="username" placeholder="نام کاربری را وارد کنید"/>
+        <div class="input-icon"><i class="fa fa-user"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input class="mainLoginInput" style="text-align:right;" name="email" type="email" placeholder="آدرس ایمیل خود را وارد کنید"/>
+        <div class="input-icon"><i class="fa fa-envelope"></i></div>
+      </div>
+      <div class="input-group input-group-icon">
+        <input class="mainLoginInput " style="text-align:right;" type="password" name="password" placeholder="یک رمز عبور مناسب وارد کنید"/>
+        <div class="input-icon"><i class="fa fa-key"></i></div>
+      </div>
+        <div class="input-group input-group-icon">
+          <input class="mainLoginInput " style="text-align:right;" type="password" name="confirmpassword" placeholder="رمز عبور خود را مجدد وارد کنید"/>
+          <div class="input-icon"><i class="fa fa-key"></i></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-half">
+
+      </div>
+  <Br>
+        <input  type="submit" name="submit" value="ثبت نام"/>
+    </div>
+    </div>
+  </form>
+          <script  src="{% static 'register/js/index.js' %}"></script>
+
+
+
+
+
+</body>
+
+</html>

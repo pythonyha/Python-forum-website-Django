@@ -7,7 +7,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
-     return render(request,"index.html",context)
+    login(request, user)
+    return render(request,"index.html",context)
 
 def signup(request):
     if request.method == 'POST':

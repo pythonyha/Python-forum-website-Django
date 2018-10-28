@@ -1,14 +1,10 @@
+
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html lang="en" >
-
-<head>
-  <meta charset="UTF-8">
-  <title>انجمن پایتون</title>
-
-
-
-  <link rel='stylesheet' href='{% static 'register/css/normalize.min.css' %}'>
+	<meta charset="utf-8">
+		<link rel='stylesheet' href='{% static 'register/css/normalize.min.css' %}'>
 
       <link rel="stylesheet" href="{% static 'register/css/style.css' %}">
 
@@ -16,9 +12,12 @@
 
          <link type="text/css" rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v18.0.0/dist/font-face.css">
 
-           <link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+			<link rel='stylesheet' href='http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
 
-           <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+         <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+  
+ <title>انجمن پایتون </title>
+
 <style>
 *{
 font-family: Vazir;
@@ -42,49 +41,23 @@ righttext{
   text-align: right;
 }
 </style>
-
-</head>
-
 <body>
 
 
 <div class="container">
-  <form>
-    <div class="row"><img src="{% static 'images/python-logo.png' %}">
-      <h4 style="font-size: 20px;">ورود به حساب کاربری</h4>
-      <div class="input-group input-group-icon">
-        <input class="mainLoginInput" style="text-align:right;" type="text" name="username" placeholder="نام کاربری"/>
-        <div class="input-icon"><i class="fa fa-user"></i></div>
-      </div>
-      <div class="input-group input-group-icon">
-        <input class="mainLoginInput " style="text-align:right;" type="password" name="password" placeholder="رمز عبور"/>
-        <div class="input-icon"><i class="fa fa-key"></i></div>
-      </div>
-
-    </div>
-    <div class="row">
-      <div class="col-half">
-
-      </div>
-  <Br>
-        <input  type="submit" name="submit" value="ورود به حساب"/>
-        <br><br> <center><a style="float: center;color:white;" href="/forget">رمز عبور خود را فراموش کرده اید؟</a>
-      <br><br><a style="float: center;color:white;" href="/register">ثبت نام</a>
-    </center>
-
-    </div>
-    </div>
-
-
-
-
-
-
-
+	<h4 style="font-size: 20px;">ورود به حساب</h4>
+   <form action="/login/" method="post">
+{{ form.as_p }}
+{% csrf_token %}
+<p><font color="red" size="3">{{ error }}</font></p><br>
+<p><input type="submit" value="Log in"></p>
+<br><br><center>
+<p><font size="3"><a href="/register">حساب کاربری ندارید؟ ثبت نام کنید</a></font></p></center>
+</form><center> <br><br>{{copyright}}</center>
+          <script  src="{% static 'register/js/index.js' %}"></script>
 
 
 
 
 </body>
-
 </html>

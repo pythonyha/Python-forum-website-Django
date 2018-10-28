@@ -6,8 +6,8 @@ from .models import Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 
+
 def index(request):
-    login(request, user)
     return render(request,"index.html",context)
 
 def signup(request):
@@ -22,7 +22,7 @@ def signup(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'signup.html', {'form': form})
+    return render(request, 'register.html', {'form': form})
 
 def user_login(request):
     if request.method == 'POST':
@@ -37,12 +37,12 @@ def user_login(request):
             else:
                 return HttpResponse('Disabled account')
         else:
-            return HttpResponse('Invalid login')
+            return render(request, 'login.html', {'form': form , 'error':"نام کاربری یا رمز عبور نادرست است"})
     else:
         form = LoginForm()
-        return render(request, 'mylogin.html', {'form': form})
+        return render(request, 'login.html', {'form': form , 'error':'' })
 @login_required
 def Profile(request):
     HttpResponse("You Are Log IN IN Profile")
 context = {"titlepre":"فعلا یه صفحه ورود و یه صفحه ثبت نام داریم",
-"copyright":"انجمن پایتون python.com (C) 2018 "}
+"copyright":"انجمن پایتون python.com (C) 2018 " , }

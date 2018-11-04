@@ -43,6 +43,7 @@ def user_login(request):
         return render(request, 'login.html', {'form': form , 'error':'' })
 @login_required
 def Profile(request):
-    HttpResponse("You Are Log IN IN Profile")
+    return redirect('home')
+
 context = {"titlepre":"فعلا یه صفحه ورود و یه صفحه ثبت نام داریم",
 "copyright":"انجمن پایتون python.com (C) 2018 " , }

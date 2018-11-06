@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, HttpResponseNotFound,HttpResponse
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login,logout
 from .form import LoginForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
@@ -44,6 +44,9 @@ def user_login(request):
 @login_required
 def Profile(request):
     return redirect('home')
-
+@login_required
+def logouty(request):
+    logout(request)
+    return redirect('profile')
 context = {"titlepre":"فعلا یه صفحه ورود و یه صفحه ثبت نام داریم",
 "copyright":"انجمن پایتون python.com (C) 2018 " , }

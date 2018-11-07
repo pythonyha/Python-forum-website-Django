@@ -8,7 +8,9 @@ from django.contrib.auth.forms import UserCreationForm
 
 
 def index(request):
-    return render(request,"index.html",context)
+    islogin=request.user.is_authenticated
+    send={"islogin":islogin}
+    return render(request,"index.html",send)
 
 def signup(request):
     if request.method == 'POST':
@@ -54,10 +56,12 @@ def Profile(request):
     'city':'Tehran',
     'score':24,
     }
+
     return render(request,  'profile.html',userdict)
 @login_required
 def logouty(request):
     logout(request)
+
     return redirect('profile')
 context = {"titlepre":"فعلا یه صفحه ورود و یه صفحه ثبت نام داریم",
 "copyright":"انجمن پایتون python.com (C) 2018 " , }

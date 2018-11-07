@@ -5,12 +5,15 @@
 {% block body %}
 
 <div class="container">
+  {% if islogin %}
+  <h1>لاگین کردی!</h1>
+  {% else  %}
   <form>
      <!--<p> <div class="row"><img src="{% static 'images/python-logo.png' %}"></p> </div>-->
 	 <br><br>
      <h4 style="font-size: 20px;"><br>{{titlepre}}</h4>
 <br><br>
-   
+
     <div class="row">
       <div class="col-half">
 
@@ -22,11 +25,10 @@
   </form></div>
     </div>
   </form>
+  {% endif %}
           <script  src="{% static 'register/js/index.js' %}"></script>
 
 
 
 
-
 {% endblock %}
-

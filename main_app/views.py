@@ -43,7 +43,18 @@ def user_login(request):
         return render(request, 'login.html', {'form': form , 'error':'' })
 @login_required
 def Profile(request):
-    return redirect('home')
+    userdict = {'textcolor':'#2b5b84',
+    'degree':'کاربر عادی',
+    'name':'جنگو پایتونی نژاد',
+    'username' : 'djangopy',
+    'bio':'اسم بابام پایتونه که یه گوگلی ساختتش و علاقه به طراحی سایت دارم',
+    'age': '43',
+    'bio':'اسم بابام پایتونه که یه گوگلی ساختتش و علاقه به طراحی سایت دارم',
+    'skills':'پایتون - جنگو - C++ , C ',
+    'city':'Tehran',
+    'score':24,
+    }
+    return render(request,  'profile.html',userdict)
 @login_required
 def logouty(request):
     logout(request)

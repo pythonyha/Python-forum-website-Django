@@ -1,0 +1,171 @@
+{% extends "parent/main.html" %}
+{% load staticfiles %}
+
+{% block title %}پروفایل کاربری{% endblock %}
+ {% block style %}
+ * {
+     box-sizing: border-box;
+ }
+
+ body {
+    background-color:#2b5b84;
+
+
+ }
+
+ /* Header/Blog Title */
+ .header {
+
+     text-align: center;
+
+ }
+
+ .header h1 {
+     font-size: 50px;
+ }
+
+ /* Style the top navigation bar */
+ .topnav {
+     overflow: hidden;
+    // background-color: #333;
+ }
+
+ /* Style the topnav links */
+ .topnav a {
+     float: left;
+     display: block;
+     color: #f2f2f2;
+     text-align: center;
+     padding: 14px 16px;
+     text-decoration: none;
+ }
+
+ /* Change color on hover */
+ .topnav a:hover {
+     background-color: #ddd;
+     color: black;
+ }
+
+ /* Create two unequal columns that floats next to each other */
+ /* Left column */
+ .leftcolumn {
+    float: right;
+    text-align:right;
+     width: 75%;
+ }
+
+ /* Right column */
+ .rightcolumn {
+     float: center;
+
+     width: 25%;
+
+     padding-left: 20px;
+ }
+
+ /* Fake image */
+ .fakeimg {
+     //background-color: #aaa;
+     width: 100%;
+     padding: 20px;
+ }
+
+ /* Add a card effect for articles */
+ .card {
+     background-color: white;
+     padding: 20px;
+     margin-top: 20px;
+ }
+
+ /* Clear floats after the columns */
+ .row:after {
+     content: "";
+     display: table;
+     clear: both;
+ }
+
+
+
+ /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+ @media screen and (max-width: 800px) {
+     .leftcolumn, .rightcolumn {
+         width: 100%;
+         padding: 0;
+     }
+ }
+
+ /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+ @media screen and (max-width: 400px) {
+     .topnav a {
+         float: none;
+         width: 100%;
+     }
+ }
+ *{
+ font-family: Vazir;
+ font-size: 16px;
+ }
+ h4{
+     font-family: Vazir;
+     font-size: 16px;
+     color: {{textcolor}} ;
+ }
+ h3{
+     font-family: Vazir;
+     font-size: 22px;
+     color: {{textcolor}} ;
+ }
+ h2{
+     font-family: Vazir;
+     font-size: 37px;
+     color: {{textcolor}} ;
+ }
+ {% endblock %}
+ {% block body %}
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>آخرین ارسالی ها</h2>
+      <h5></h5>
+      <div class="fakeimg" style="height:200px;"></div>
+      </div>
+
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+     <h3 style=" text-align:center;">{{degree}}</h3>
+      <div class="fakeimg" style="height:800px;">
+      <center><img   src="http://www.nazweb.ir/upload/image3/0.957332001372001079_nazweb_ir.jpg"  style="Border-radius:10000px;" alt="profile pic" height="200px" width="200px"/>
+     </center><br><h3  style=" text-align:center;"><p>{{name}}</p>
+              </h3>
+              <h4  style=" text-align:right;"> {{username}} :نام کاربری
+
+         <br><br> درباره من: {{bio}}
+          <br><br> سن: {{age}}
+          <br><br> {{city}} :شهر
+          <br><br> :مهارت ها<br> {{skills}}
+          <br><br> امتیاز در انجمن: {{score}}
+         </h4>
+
+
+
+
+</div>
+
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Some text..</p>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

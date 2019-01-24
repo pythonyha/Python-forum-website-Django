@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponseRedirect, HttpResponseNotFound,HttpResponse
 from django.contrib.auth import authenticate, login,logout
-from .form import LoginForm
+from .form import LoginForm,profile
 from .models import Profile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
@@ -65,3 +65,6 @@ def logouty(request):
     return redirect('profile')
 context = {"titlepre":"فعلا یه صفحه ورود و یه صفحه ثبت نام داریم",
 "copyright":"انجمن پایتون python.com (C) 2018 " , }
+def profile_form(request):
+    form=profile()
+    return render(request,"profile_form.html",{"form":form})
